@@ -37,7 +37,7 @@ def dijkstra(start: str, end: str, network: Dict[str, List[Tuple[str, int]]], gp
     scores = {node: float('inf') for node in set(network.keys()).union({x[0] for x in sum(network.values(), [])})}
     scores[start] = 0
     paths = {start: [start]}
-    pq = List[Tuple[float, str]] = [(0, start)]
+    pq: List[Tuple[float, str]] = [(0, start)]
     while pq:
         current_score, current = heapq.heappop(pq)
         if current == end:
